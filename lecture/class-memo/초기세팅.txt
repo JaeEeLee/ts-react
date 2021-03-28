@@ -1,0 +1,34 @@
+20210328
+
+@진행
+>npm init
+>npm i typescript
+>npm i react react-dom
+>npm i webpack webpack-cli -D
+>npm i awesome-typescript-loader -D
+ => npm i ts-loader --save-dev
+>npm i @types/react @types/react-dom
+
+__________________
+package.json 에서 scripts> test 를 start? dev? 'webpack'....?
+
+#webpack, webpack-cli 최신문법과 과거 문법을 과거 문법으로 바꿔주는것
+
+#webpack과 typescript 를 이어 주는 ts-loader 라고 있지만 여기 강좌에서는 
+	awesome-typescript-loader(atl.. ts-loader 보다 빠르다고 한다) 를 쓴다
+
+#남이 만든 git source 를 다운받을때의 유형 
+1. best. redux는 typescript로 만들어져서 지원
+2. axios는 typescript로 만들어져있지않지만 index.d.ts 파일을 제공해서 따로 타입정의를 하지않아도 됨
+3. react/react-dom node-modules> 안에있음 둘다 javascript. 타입을 제공하지않음
+워낙 유명해서 커뮤니티에서 제공해줌 (index.d.ts) so
+//"@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3"
+
+
+
+package.json > dev "webpack" 으로 수정
+# webpack 실행시
+> npm run dev 아니면 >npx webpack
+
+react package 중에 ant ?

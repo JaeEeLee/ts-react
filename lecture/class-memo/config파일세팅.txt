@@ -1,0 +1,26 @@
+20210328
+
+tsconfig.json , webpack.config.js 파일 추가
+
+#tsconfig.json
+	"strict": true, //안쓰면 타입스크립트 쓰는 의미가 없음
+	"es20XX", // javascript 에서 제공하는 문법들을 쓰기위해 가능하면 다 ~ 아니면 쓰는것만
+
+
+#webpack.config.js
+	mode: 'development', // 배포시 production
+	devtool: 'eval', // 배포시 hidden-source-map. 안그러면 개발자도구에 소스가 노출됨
+
+	webpack에서는 설정이 크게 4개
+	- entry. 
+		client.tsc 파일이 메인 파일. 그 파일을 통해서 app.js 를 만들어냄 
+		만들어내는 과정이 modules, plugins . 이게 과정이고 결과적으로 뽑아내는것이 output
+		>npx webpack 을 하면 client를 통해 dist 파일이 생김
+		module > rules > tsx 파일이나 ts 파일을 awesome-typescript-loader를 통해 과거 문법으로 변경하겠다.
+	- module
+	- plugins
+		// plugins 에서 new webpack.LoaderOptionsPlugin({ debug: true}) 없어졌으니 하지말기
+	- output
+
+
+여기까지하면 npx loader 로 확인
