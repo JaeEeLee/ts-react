@@ -1,0 +1,11 @@
+> npm i react-hot-loader
+	저장할때 새로고침 자동으로 되는 것
+
+High order Component ? -> HOC
+= 컴포넌트를 다른 컴포넌트로 감싸는것. 
+= dts 를 제공함 // react 와 react-dom 은 d.dts 를 제공하지 않음
+
+##useCallback이 타입추론을 어렵게 할수있다ㄴ
+
+
+##제네릭의 단점: 타입추론을 잘 해주는데 가독성이 너무 떨어짐. but 감안하셈 제네릭은 타입추론 짱짱이니까능
