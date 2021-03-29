@@ -10,6 +10,7 @@
 			"dom"
 		],
 		"jsx": "react",
-		"esModuleInterop": true
+		"esModuleInterop": true,
+		"noImplicitAny": true,
 	}
 }

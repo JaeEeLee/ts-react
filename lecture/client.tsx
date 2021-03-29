@@ -1,5 +1,5 @@
 import * as React from 'react'
 import * as ReactDom from 'react-dom'
-// import GuGuDan from './GuGudan'
+import GuGuDan from './GuGudan'
 
-// React.render(<GuGuDan/>, document.querySelector('#root'))
+ReactDom.render(<GuGuDan/>, document.querySelector('#root'))

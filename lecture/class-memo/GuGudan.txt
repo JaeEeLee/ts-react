@@ -1,0 +1,22 @@
+const onSubmitForm = useCallback( // 으로 감싸기도 함
+	(e: FormEvent<HTMLFormElement>): void => { //HTML 부분은 생략하기도함
+
+//분리하는 경우. 대부분. useCallback으로 감싸야하니까. 
+onChange={handleChange}
+
+//매개변수로 타입추론이 가능
+onChange={(e) => handleChange(e.target.value)}
+
+
+## useState로 타입 추론이 불가하면 제네릭을 넣어주면 된다
+	but 보통은 가독성이 떨어지기 때문에 생략. 필요할 경우 추가. 
+	ex) useState<number>(1)
+## useRef 도 제너릭이 가능하다
+## useRef 은 타입추론이 안되어서 제네릭을 끼워넣은 것
+## input! 은 100% 확신할때.
+	input이 실제로 존재할때 사용하는것이다.
+	가능하면 if()로 감쌀것
+
+render 는 React.render 가 아니라 ReactDom.render!
+
+## webpack.config.js 파일에 mode를 production 으로 하면 용량이 확 줄어든다 but 개발할때는 불필요

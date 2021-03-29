@@ -5,3 +5,11 @@ import React from 'react' 는 리액트에서만 가능
 import React from 'react' 를 사용하고싶다면
 	tsconfig.json 에서 "esModuleInterop": true 추가 
 	but !! esModule 을 쓴다면 하지마라
+
+
+
+
+______________
+20210329
+
+##esModuleInterop  개인의 자유!!! 초보자 입문자는 안쓰는게 좋을뿐 자유~~!!!!

@@ -1,0 +1,6 @@
+Component 문법을 사용한 리액트
+
+
+Component는 제네릭이다 따라서 
+	Component<첫째 인자, 둘째인자> 
+여기서 첫째 인자는 props, 둘째인자는 state
