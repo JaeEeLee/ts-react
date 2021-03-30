@@ -6,7 +6,7 @@ const WordRelay = () => {
 	const [value, setValue] = useState('')
 	const [result, setResult] = useState('')
 
-	const onSubmitForm = useCallback((e: FormEvent) => {
+	const onSubmitForm = useCallback<(e: FormEvent) =>  void>((e) => {
 		const input = inputRef.current
 		if(word[word.length -1] === value[0]) {
 			setResult('right')
