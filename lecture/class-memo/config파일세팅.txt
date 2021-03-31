@@ -20,7 +20,14 @@ tsconfig.json , webpack.config.js 파일 추가
 	- module
 	- plugins
 		// plugins 에서 new webpack.LoaderOptionsPlugin({ debug: true}) 없어졌으니 하지말기
+		// webpack3.v 에서부터 없어졌다고한다
 	- output
+
+++ 20210331 숫자야구강의타이핑_
+		filename: 'app.js', 으로 해놨는데 .. 뭐죠?
+		// filename: '[name].js',
+
+
 
 
 여기까지하면 npx loader 로 확인
