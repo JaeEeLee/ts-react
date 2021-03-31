@@ -9,3 +9,23 @@ High order Component ? -> HOC
 
 
 ##제네릭의 단점: 타입추론을 잘 해주는데 가독성이 너무 떨어짐. but 감안하셈 제네릭은 타입추론 짱짱이니까능
+
+
+
+___________________
+
+20210331
+
+##watch 가 아니라 webpack-dev-server 를 씁니다!!!!!
+webpack-dev-server를 쓰면 알아서 rerendering이 된당
+
+## hooks 에서 useState, useCallback, use뭐시깽이 모두 바로 뒤에 제네릭을 선언헤서 타입추론이 가능하다
+
+## 제네릭을 쓰는 이유
+	타입추론이 점점 정확해진다.
+
+?웹스톰은 유료..
+?vscode는 ms에서 만든것 typescript도 ms에서 만든거. 그래서 추천
+?웹스톰도 유료라서 잘혀 ㅋㅋ
+
+#typescript 공부법 : typescriptlang.org/docs/home.html ㄱ ㄱ 버전을 거꾸로해서 정독하기

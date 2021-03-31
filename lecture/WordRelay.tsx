@@ -7,18 +7,24 @@ const WordRelay = () => {
 	const [result, setResult] = useState('')
 
 	const onSubmitForm = useCallback<(e: FormEvent) =>  void>((e) => {
+		e.preventDefault()
 		const input = inputRef.current
 		if(word[word.length -1] === value[0]) {
 			setResult('right')
-			setValue(value)
-			setWord('')
+			setWord(value)
+			setValue('')
 			input && input.focus()
 		} else {
 			setResult('wrong')
 			setValue('')
 			input && input.focus()
 		}
-	}, [])
+		/**
+		 * useCallback 이니까 value를 넣어준다. 그래야지만 rerendering이 된다
+		 * 또한 useCallback 안에서 쓰이는 state 값들을 모두 [쬬기]에 써줘야한다!!
+		 */
+		//
+	}, [word, value]) //[쬬기]
 
 	//제네릭 안쓴거
 	const onChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
