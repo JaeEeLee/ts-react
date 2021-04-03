@@ -1,0 +1,26 @@
+>>>>>const inputEl = useRef<HTMLInputElement>(null)
+
+기본값을 널을 넣었기때문에 제네릭을 써서 타입을 inputElement로 바꿔줬다
+Ref object. 객체라고 알아두면 된다
+안에 current가 들어있는 객체
+ref object 는 그저 current가 들어있는 객체로 알고있으면 된다
+
+
+>>>>>const onSubmitForm = () => {
+
+}
+useCallback으로 감싸주면 e 가 안잡힌다 
+매개변수에 타입을 적어주거나 제네릭을 사용
+
+>>>>>빈 배열은 항 상 타이핑 문제 발생함
+
+리액트에서 제공하는 제네릭 방법ㅂ
+> 타입스크립트에서 proptypes 를 설치. 
+but 타입스크립트를 쓸때는 불필요
+
+함수형 컴포넌트는 FunctionComponent , FC
+@deprecated 는 쓰지말라는것
+
+states는 useState가 대체해서 제네릭에서는 타이핑이 없다
+
+실제코드가 아닌 타이핑인 경우는 별도의 파일로 따로 뺀다 
