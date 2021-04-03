@@ -32,3 +32,34 @@ package.json > dev "webpack" 으로 수정
 > npm run dev 아니면 >npx webpack
 
 react package 중에 ant ?
+
+
+
+__________________
+20210403
+설치
+매번 코드 바뀔때마다 npx webpack 치지말고 아래 시행
+
+> npm i -D webpack-dev-server
+//> package.json 에서 scripts: .. dev: "webpack-dev-server --hot"
+> package.json 에서 scripts: .. dev: "webpack serve --env development --hot"
+> npm run dev (실행!!!)
+
+##webpack-cli@4버전 사용 시 
+	명령어가 webpack-dev-server 대신에 
+	webpack serve --env development로 바뀌었다!!!!
+
+##webpack serve 사용시 webpack.config.js 세팅
+	webpack.config.js > 
+	output: {
+		filename: 'app.js',
+		path: path.join(__dirname, 'dist')
+	},
+	devServer: {
+		port: 8080,
+		publicPath: '/dist/', // 이 부분 넣어주고 dist폴더 제거(다시 빌드 되게)
+		hot: true
+	}
+
+저장하면 알아서 빌드를 한당~~
+__________________
