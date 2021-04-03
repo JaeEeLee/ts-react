@@ -2,13 +2,21 @@ import * as React from 'react'
 import * as ReactDom from 'react-dom'
 import { hot } from 'react-hot-loader/root'
 
-import NumberBaseball from './NumberBaseball'
 
-const Hot = hot(NumberBaseball) // HOC
+ import ResponseCheck from './ResponseCheck'
+ const Hot = hot(ResponseCheck) // HOC
+
 
 ReactDom.render(<Hot />, document.querySelector('#root'))
 
 
+
+/**
+ * 야구게임
+ * import NumberBaseball from './NumberBaseball'
+ * const Hot = hot(NumberBaseball) // HOC
+ * ReactDom.render(<Hot />, document.querySelector('#root'))
+ */
 
 /**
  * 끝말잇기

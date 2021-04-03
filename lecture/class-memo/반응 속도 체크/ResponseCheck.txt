@@ -1,0 +1,77 @@
+빈 배열을 useState 해버리면 타입이 안잡히기 때문에 never가 되어 버린다.
+따라서 제너릭을 해줘서 타입을 잡아준다. 타입을 수동으로 잡아주는것.
+수동으로 타입을 잡아주는 것이 제너릭의 역할이다!!
+
+## jsx에 들어가는 함수들은 onclick, onSubmit .. 이런 애들은
+무조건 useCallback 으로 감싸줘야한다.(부탁..?)
+
+>> const timeout = useRef<number>(null)
+	timeout.current 에서 error 발생한다
+	timeout.current 에 저장하는 이유는 나중에 clearTimeout 을 쓰기위해서.
+	state===ready 에서도 error 가 발생하는데 
+	null 이 들어갈수도 있기때문에 그런것이니 뒤에 !를 붙여준당
+
+>> 	clearTimeout(timeout.current!)
+	뒤에 느낌표를 주는 이유는 확신을 갖고있기 때문에 그런것 이렇게 코딩하거나
+	if(timeout.current)
+		clearTimeout(timeout.current)
+	가 더 좋기는 하다.
+
+
+## current 가 readonly property 면 대입을 못한다 
+	대입 못하면 clearTimeout을 할수가 없다.
+	따라서 const timeout = useRef<number | null>(null)
+	로 해줘야 한다
+
+
+
+##ref 를 쓰는 이유가 화면에 렌더링 없이.
+	state가 변경되면 화면이 리렌더링되는데
+	ref는 값을 바꿔도 화면이 리렌더링 되지 않는다.!!!!
+	그 현상을 위해 쓴다
+
+
+
+### useRef 는 세가지 종류가 있다
+useRef는 overloading이 되어있어서 제너릭이 undefined인지 아닌지에 따라 다름 
+
+1. function useRef<T>(initialValue: T): MutableRefObject<T>;
+	null이 되는 순간 MutableRefObject 아니면 RefObject
+
+2. function useRef<T>(initialValue: T|null): RefObject<T>;
+	값이 있으면 RefObject
+
+3. function useRef<T = undefined>(): MutableRefObject<T | undefined>;
+	undefined는 MutableRefObject
+
+	## MutableRefObject 는 readonly가 아니라서 current값에 대입가능!!!! 
+		그래서 MutableRefObject가 되기 위해 | null 을 붙여준다~~
+
+			T | null 을 하나의 타입이라고 생각하자
+
+
+
+
+>> timeout.current = window.setTimeout(() => { 
+	window 가 없으면 timeout의 타입 에러
+	왜냐하면 setTimeout은 Node.js 에서 지원하는것!
+	그래서 window. 을 붙여서 브라우저의 setTimeout이라는 것을 알려줘야한다
+
+	아니면
+	setTimeout(() => { }, timeout) 
+		에다가
+	setTimeout(() => { }, timeout as unknown as number)
+		강제로 형변환을 해주는 것도 가능하다
+
+
+```
+*오버로딩(Overloading)
+ 오버로딩은 메서드 오버로딩과 생성자 오버로딩이 있습니다. 하지만 둘 다 같은 개념이에요.
+같은 이름의 함수(메서드)를 여러개 정의하고, 매개변수의 유형과 개수를 다르게 하여 다양한 유형의 호출에 응답할 수 있게됩니다.
+
+*오버라이딩(Overriding)
+ 상위 클래스가 가지고 있는 멤버변수가 하위 클래스로 상속되는 것처럼 상위 클래스가 가지고 있는 메서드도 하위 클래스로 상속되어 하위 클래스에 사용할 수 있습니다. 또한, 하위 클래스에서 메서드를 재정의해서도 사용할 수 있습니다.
+쉽게 말해 메서드의 이름이 서로 같고, 매개변수가 같고, 반환형이 같을 경우에 상속받은 메서드를 덮어쓴다고 생각하시면 됩니다. ' 부모클래스의 메서드는 무시하고, 자식 클래스의 메서드 기능을 사용하겠다'와 같습니다.
+
+출처: https://private.tistory.com/25 [공부해서 남 주자]
+```
