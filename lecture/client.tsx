@@ -12,6 +12,14 @@ ReactDom.render(<Hot />, document.querySelector('#root'))
 
 
 /**
+ * 가위바위보
+ * import Rsp from './Rsp'
+ * const Hot = hot(Rsp) // HOC
+ * ReactDom.render(<Hot />, document.querySelector('#root'))
+ */
+
+
+/**
  * 속도 측정 게임
  * import ResponseCheck from './ResponseCheck'
  * const Hot = hot(ResponseCheck) // HOC
