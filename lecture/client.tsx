@@ -3,12 +3,20 @@ import * as ReactDom from 'react-dom'
 import { hot } from 'react-hot-loader/root'
 
 
- import ResponseCheck from './ResponseCheck'
- const Hot = hot(ResponseCheck) // HOC
+ import Rsp from './Rsp'
+ const Hot = hot(Rsp) // HOC
 
 
 ReactDom.render(<Hot />, document.querySelector('#root'))
 
+
+
+/**
+ * 속도 측정 게임
+ * import ResponseCheck from './ResponseCheck'
+ * const Hot = hot(ResponseCheck) // HOC
+ * ReactDom.render(<Hot />, document.querySelector('#root'))
+ */
 
 
 /**

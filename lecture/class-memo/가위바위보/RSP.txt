@@ -1,0 +1,18 @@
+onClick={onClickBtn}이 아니라
+onClick={onClickBtn('바위') 이면 고차함수 라고 부른다 
+이 경우에는 함수선언 또한 고차함수로 해준다
+
+
+const 정의시 type을 정의해주지 않아도 된다 
+바뀌지않을 상수값이기때문에 뒤에 as const 를 붙이면 readonly가 된다
+
+>const computerChoice = (imgCoords: ImgCoords) => {
+	주석 확인
+
+node 인지 window에서 실행되는지 모르기때문에 알려줘야한다.
+
+typescript는 변수 매개변수 return 값에 타입이 있움
+
+배열에 include 쓰기위해서는 es2016 써줘야한다
+
+typescript는 vscode 강추 
