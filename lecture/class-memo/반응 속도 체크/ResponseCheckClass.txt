@@ -1,0 +1,13 @@
+화면에 영향을 끼치지 않는 애들은 ref 사용을 한다.!?
+
+빈배열은 에러가 뜨기 때문에 타입추론을 꼭 해줘야한다.
+useRef 의 세가지 중 어떤것인지 정의해주기/
+setTimeout 경우에 node.js 인지 window 인지 확인 필요.
+class Component에서는 union 경우~~ state: StateInterface 해줘야한다
+typescript의 한계로는 ref에 number이면 뒤에 ! 붙여서 ㅇㅇ
+
+const 는 되도록 하용 하지 말자
+const하면 타입을 못가져온다
+
+const {ReactNode }  못가져옴
+import 로 가져오기
